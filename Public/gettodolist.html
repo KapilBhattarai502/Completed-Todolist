@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./gettodolist.style.css">
+</head>
+<body>
+    <h1>Todo List</h1>
+    <div id="dataContainer"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/get/todolist')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('dataContainer');
+                    data.forEach(record => {
+                        const form = document.createElement('form');
+                        form.setAttribute('id', 'dataform');
+
+                        const titleLabel = document.createElement('label');
+                        titleLabel.setAttribute('for', 'title');
+                        titleLabel.textContent = 'Title';
+                        form.appendChild(titleLabel);
+
+                        const titleInput = document.createElement('input');
+                        titleInput.setAttribute('type', 'text');
+                        titleInput.setAttribute('id', 'title');
+                        titleInput.setAttribute('name', 'title');
+                        titleInput.value = record.title;
+                        form.appendChild(titleInput);
+                        form.appendChild(document.createElement('br'));
+                        form.appendChild(document.createElement('br'));
+
+                        const descriptionLabel = document.createElement('label');
+                        descriptionLabel.setAttribute('for', 'description');
+                        descriptionLabel.textContent = 'Description';
+                        form.appendChild(descriptionLabel);
+
+                        const descriptionInput = document.createElement('input');
+                        descriptionInput.setAttribute('type', 'text');
+                        descriptionInput.setAttribute('id', 'description');
+                        descriptionInput.setAttribute('name', 'description');
+                        descriptionInput.value = record.description;
+                        form.appendChild(descriptionInput);
+                        form.appendChild(document.createElement('br'));
+                        form.appendChild(document.createElement('br'));
+
+                        const dateLabel = document.createElement('label');
+                        dateLabel.setAttribute('for', 'date');
+                        dateLabel.textContent = 'Date:';
+                        form.appendChild(dateLabel);
+
+                        const dateInput = document.createElement('input');
+                        dateInput.setAttribute('type', 'date');
+                        dateInput.setAttribute('id', 'date');
+                        dateInput.setAttribute('name', 'date');
+                        dateInput.value = record.date;
+                        form.appendChild(dateInput);
+                        form.appendChild(document.createElement('br'));
+                        form.appendChild(document.createElement('br'));
+
+                        container.appendChild(form);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
+</body>
+</html>

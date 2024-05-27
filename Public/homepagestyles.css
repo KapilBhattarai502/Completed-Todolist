@@ -1,0 +1,97 @@
+
+*{
+    box-sizing: border-box;
+
+}
+.bg-image{
+    margin-top: 3px;
+    background-image: url("https://wp-int-blog.s3.eu-central-1.amazonaws.com/wp-content/uploads/2023/09/14090648/BI-Business-Intelligence-Developer-scaled.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height:50rem;
+    align-items: center;
+    display: flex;
+   
+    justify-content: center;
+    
+    
+    
+}
+.bg-image .home-btns{
+    display: flex;
+    margin-left: 15px;
+    padding: 10px 30px 10px 30px;
+  
+}
+.home-btns div{
+    margin-left: 10px;
+}
+
+.fill-todolist{
+    border-radius: 7px;
+   
+    width: 450px;
+   
+    background-color: skyblue;
+    border: 2px solid white;
+    opacity: 0.8;
+   text-align: center;
+   display: none;
+    
+
+   
+}
+.fill-todolist button{
+    background-color: skyblue;
+    border-radius: 6px;
+    width: 100%;
+    padding:5px 10px 5px 10px;
+}
+
+.fill-todolist input{
+    text-align: center;
+   
+   
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    
+    
+    
+  
+    padding: 5px 15px 5px 15px;
+}
+.fill-todolist .todo-title{
+    margin-top:25%;
+
+}
+.fill-todolist .todo-date{
+    margin-bottom: 25%;
+    background-color:#1A4D2E;
+    
+    font-weight: bold;
+    color: white;
+}
+.fill-todolist button:hover{
+    background-color: #151515;
+    
+}
+.error-message {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
+  }
+  
+  .is-invalid {
+    border-color: red;
+  }
+  .btn-light a{
+    text-decoration: none;
+    color: black;
+    }
+
+
+
